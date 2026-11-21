@@ -1,0 +1,151 @@
+{
+  "encoder": "b32",
+  "dataset": "imagenetr",
+  "block": "cardinality",
+  "part": 0,
+  "B": 10,
+  "order": 1,
+  "session": 3,
+  "reference_closed": 0.961518515783073,
+  "selection_sha256": "3f1ae3306274ac3e9fc54178f2da43de16606859dcd723cab592f688640dc9ec",
+  "archive_sha256": "7909c3c0e8fced2e7300fb0032dde587131b514e3fe6b75da84830785e682d74",
+  "records": [
+    {
+      "method": "C10",
+      "policy": {
+        "policy": "paired_accuracy",
+        "offset": -0.7758276462554932,
+        "fallback": false,
+        "certified_expansion": true,
+        "delta": 0.05,
+        "per_session_delta": 0.01,
+        "trace": [
+          {
+            "offset": -0.7758276462554932,
+            "pvalue": 0.007427373602660382,
+            "accepted": true,
+            "log_evalue": 4.902582968253242,
+            "accuracy_surplus": 0.03325000000000004,
+            "destroyed": 0.015,
+            "recovered": 0.0
+          },
+          {
+            "offset": -0.4214518260955811,
+            "pvalue": 0.30967945770738237,
+            "accepted": false,
+            "log_evalue": 1.1722175238529293,
+            "accuracy_surplus": 0.020750000000000043,
+            "destroyed": 0.027500000000000004,
+            "recovered": 0.0
+          }
+        ],
+        "old": 0.9510812974174658,
+        "new": 0.6071227817224387,
+        "overall": 0.6931124106461956,
+        "harmonic": 0.7411392777908824,
+        "destroyed_test": 0.010437218365607112,
+        "recovered_test": 0.0,
+        "test_target_met": true,
+        "target_gap_pp": 3.763870742354647
+      },
+      "capacity95": {
+        "feasible": true,
+        "ceiling": 0.9585773393124848,
+        "offset": 0.009149551391601562,
+        "old": 0.9149967897246789,
+        "new": 0.7315779039313608,
+        "overall": 0.7774326253796903,
+        "harmonic": 0.8130714459656778
+      },
+      "auc": 0.9755388128263782,
+      "fixed_gate": {
+        "old": 0.9212238959517851,
+        "new": 0.7249780710157385,
+        "overall": 0.7740395272497501,
+        "harmonic": 0.8114036266048325
+      },
+      "matched_actual_base": {
+        "C10": {
+          "feasible": true,
+          "ceiling": 0.9585773393124848,
+          "offset": -0.505684494972229,
+          "old": 0.9510812974174658,
+          "new": 0.6673043966811961,
+          "overall": 0.7382486218652635,
+          "harmonic": 0.7843133236807274
+        },
+        "C50": {
+          "feasible": false,
+          "ceiling": 0.9585773393124848,
+          "offset": null
+        }
+      }
+    },
+    {
+      "method": "C50",
+      "policy": {
+        "policy": "paired_accuracy",
+        "offset": null,
+        "fallback": true,
+        "certified_expansion": false,
+        "delta": 0.05,
+        "per_session_delta": 0.01,
+        "trace": [
+          {
+            "offset": -0.5675055980682373,
+            "pvalue": 0.020309840699281018,
+            "accepted": false,
+            "log_evalue": 3.8966497468828876,
+            "accuracy_surplus": 0.03075000000000004,
+            "destroyed": 0.0175,
+            "recovered": 0.0
+          }
+        ],
+        "old": 0.961518515783073,
+        "new": 0.0,
+        "overall": 0.24037962894576825,
+        "harmonic": 0.0,
+        "destroyed_test": 0.0,
+        "recovered_test": 0.0,
+        "test_target_met": true,
+        "target_gap_pp": 4.807592578915365
+      },
+      "capacity95": {
+        "feasible": true,
+        "ceiling": 0.961518515783073,
+        "offset": 0.03707766532897949,
+        "old": 0.9164619911898804,
+        "new": 0.7404004231924766,
+        "overall": 0.7844158151918276,
+        "harmonic": 0.8190768771464415
+      },
+      "auc": 0.9761970386470051,
+      "fixed_gate": {
+        "old": 0.9081163429048994,
+        "new": 0.741549848479833,
+        "overall": 0.7831914720860995,
+        "harmonic": 0.8164240014131874
+      },
+      "matched_actual_base": {
+        "C10": {
+          "feasible": true,
+          "ceiling": 0.961518515783073,
+          "offset": -0.3707764148712159,
+          "old": 0.9540224738880541,
+          "new": 0.6716367221667422,
+          "overall": 0.7422331600970702,
+          "harmonic": 0.7883036355843689
+        },
+        "C50": {
+          "feasible": true,
+          "ceiling": 0.961518515783073,
+          "offset": -1.146223545074463,
+          "old": 0.961518515783073,
+          "new": 0.45156112788972946,
+          "overall": 0.5790504748630653,
+          "harmonic": 0.6145221713694125
+        }
+      }
+    }
+  ]
+}

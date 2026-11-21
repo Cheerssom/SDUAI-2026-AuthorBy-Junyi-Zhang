@@ -1,0 +1,165 @@
+{
+  "encoder": "b32",
+  "dataset": "imagenetr",
+  "block": "cardinality",
+  "part": 6,
+  "B": 20,
+  "order": 1,
+  "session": 5,
+  "reference_closed": 0.8478114163168711,
+  "selection_sha256": "3602680f8619b31bf20463f2a98a3f80f589b0f52af91ccbca94f5cb8668f3de",
+  "archive_sha256": "dda90b2932778f3a350cf476011a0ad1bc976ba5ce079e602ce74273e10ecf72",
+  "records": [
+    {
+      "method": "C10",
+      "policy": {
+        "policy": "paired_accuracy",
+        "offset": null,
+        "fallback": true,
+        "certified_expansion": false,
+        "delta": 0.05,
+        "per_session_delta": 0.01,
+        "trace": [
+          {
+            "offset": -2.9022014141082764,
+            "pvalue": 0.745619381922248,
+            "accepted": false,
+            "log_evalue": 0.2935400208812289,
+            "accuracy_surplus": 0.012098484848484888,
+            "destroyed": 0.04059782608695652,
+            "recovered": 0.01
+          }
+        ],
+        "old": 0.8478114163168711,
+        "new": 0.0,
+        "overall": 0.24223183323339173,
+        "harmonic": 0.0,
+        "destroyed_test": 0.0,
+        "recovered_test": 0.0,
+        "test_target_met": true,
+        "target_gap_pp": 4.239057081584363
+      },
+      "capacity95": {
+        "feasible": true,
+        "ceiling": 0.8226903555727381,
+        "offset": -1.875698804855347,
+        "old": 0.8055439063786032,
+        "new": 0.5892353821825617,
+        "overall": 0.651037817667145,
+        "harmonic": 0.6806166042650051
+      },
+      "auc": 0.9489104515070619,
+      "fixed_gate": {
+        "old": 0.6127145772088806,
+        "new": 0.7514451574009707,
+        "overall": 0.7118078487746593,
+        "harmonic": 0.675025644330833
+      },
+      "matched_actual_base": {
+        "C10": {
+          "feasible": false,
+          "ceiling": 0.8226903555727381,
+          "offset": null
+        },
+        "C50": {
+          "feasible": true,
+          "ceiling": 0.8226903555727381,
+          "offset": -2.2567722797393803,
+          "old": 0.8183988809183603,
+          "new": 0.5348031446536293,
+          "overall": 0.615830497872124,
+          "harmonic": 0.6468838899515315
+        }
+      }
+    },
+    {
+      "method": "C50",
+      "policy": {
+        "policy": "paired_accuracy",
+        "offset": -0.6368394947052002,
+        "fallback": false,
+        "certified_expansion": true,
+        "delta": 0.05,
+        "per_session_delta": 0.01,
+        "trace": [
+          {
+            "offset": -1.7975760698318481,
+            "pvalue": 4.767661824593548e-08,
+            "accepted": true,
+            "log_evalue": 16.8588247427547,
+            "accuracy_surplus": 0.04269631093544141,
+            "destroyed": 0.00125,
+            "recovered": 0.00125
+          },
+          {
+            "offset": -0.699870719909668,
+            "pvalue": 0.002225349528733106,
+            "accepted": true,
+            "log_evalue": 6.1078412841360805,
+            "accuracy_surplus": 0.028348484848484887,
+            "destroyed": 0.015597826086956522,
+            "recovered": 0.00125
+          },
+          {
+            "offset": -0.6368394947052002,
+            "pvalue": 0.00720910450246642,
+            "accepted": true,
+            "log_evalue": 4.932410537553455,
+            "accuracy_surplus": 0.025848484848484884,
+            "destroyed": 0.018097826086956523,
+            "recovered": 0.00125
+          },
+          {
+            "offset": -0.5136066436767578,
+            "pvalue": 0.15763456144456078,
+            "accepted": false,
+            "log_evalue": 1.8474758270946645,
+            "accuracy_surplus": 0.017098484848484887,
+            "destroyed": 0.025597826086956522,
+            "recovered": 0.0
+          }
+        ],
+        "old": 0.818236198479082,
+        "new": 0.6345659128613841,
+        "overall": 0.6870431373235835,
+        "harmonic": 0.7147908117300723,
+        "destroyed_test": 0.029575217837788995,
+        "recovered_test": 0.0,
+        "test_target_met": true,
+        "target_gap_pp": 1.2815352978054584
+      },
+      "capacity95": {
+        "feasible": true,
+        "ceiling": 0.8464600649655196,
+        "offset": -0.3069863319396973,
+        "old": 0.806100688045994,
+        "new": 0.6835045736984044,
+        "overall": 0.7185320349405728,
+        "harmonic": 0.7397577348721923
+      },
+      "auc": 0.9521912006315539,
+      "fixed_gate": {
+        "old": 0.6614637724044177,
+        "new": 0.7539089630772815,
+        "overall": 0.7274960514564632,
+        "harmonic": 0.7046673349926903
+      },
+      "matched_actual_base": {
+        "C10": {
+          "feasible": false,
+          "ceiling": 0.8464600649655196,
+          "offset": null
+        },
+        "C50": {
+          "feasible": true,
+          "ceiling": 0.8464600649655196,
+          "offset": -0.5469317436218263,
+          "old": 0.818236198479082,
+          "new": 0.6521210456617583,
+          "overall": 0.6995825178952794,
+          "harmonic": 0.7257951052055625
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,303 @@
+{
+  "selection_sha256": "8115bf83aeeeddface943c5719e3a53f8c8e1f5ea581856c10fbed54c168427b",
+  "raw_sha256": "8877844f78db7bdba1f148ada6ab7dab8edadbcc8f8ba0179156796b1feea837",
+  "original_archive_sha256": "827ed89675e0abc229bf02d1e64a2aec3e8143583abe27d2643ccb05ee9c1286",
+  "calibration_archive_sha256": "b8ba6cf4e0ccdd6b6421c6efc29e2e17517570a8c869e3815386cbbbc78ee706",
+  "records": [
+    {
+      "encoder": "l14",
+      "dataset": "pets",
+      "part": 1,
+      "order": 1,
+      "session": 3,
+      "method": "logistic",
+      "policy": "fixed_gate",
+      "old": 0.9688047485160889,
+      "new": 0.6710641563022516,
+      "overall": 0.8571520264358998,
+      "harmonic": 0.7929050173148854
+    },
+    {
+      "encoder": "l14",
+      "dataset": "pets",
+      "part": 1,
+      "order": 1,
+      "session": 3,
+      "method": "logistic",
+      "policy": "protection",
+      "offset": 0.2561867845924861,
+      "certified_expansion": true,
+      "fallback": false,
+      "delta": 0.05,
+      "per_session_delta": 0.01,
+      "calibration_max_weight": 0.0016666666666666668,
+      "trace": [
+        {
+          "offset": -0.6572672727510758,
+          "pvalue": 1.853867032129082e-13,
+          "loss": 0.00041666666666666707,
+          "accepted": true
+        },
+        {
+          "offset": -0.12910970654541154,
+          "pvalue": 8.50305406575713e-12,
+          "loss": 0.002083333333333334,
+          "accepted": true
+        },
+        {
+          "offset": 0.2561867845924861,
+          "pvalue": 0.004713403800871866,
+          "loss": 0.02375,
+          "accepted": true
+        },
+        {
+          "offset": 0.4106383928051216,
+          "pvalue": 0.3157144289225316,
+          "loss": 0.037083333333333336,
+          "accepted": false
+        }
+      ],
+      "old": 0.9572980318650424,
+      "new": 0.7167438557914749,
+      "overall": 0.8670902158374546,
+      "harmonic": 0.8197375317305364,
+      "destroyed_test": 0.03316619806310528,
+      "recovered_test": 0.0,
+      "test_target_met": true,
+      "target_gap_pp": 1.6357013433302314
+    },
+    {
+      "encoder": "l14",
+      "dataset": "pets",
+      "part": 1,
+      "order": 1,
+      "session": 3,
+      "method": "logistic",
+      "policy": "paired_accuracy",
+      "offset": -0.12910970654541154,
+      "fallback": false,
+      "certified_expansion": true,
+      "delta": 0.05,
+      "per_session_delta": 0.01,
+      "trace": [
+        {
+          "offset": -0.6572672727510758,
+          "pvalue": 2.3779134071293653e-12,
+          "accepted": true,
+          "log_evalue": 26.764797732482194,
+          "accuracy_surplus": 0.04958333333333334,
+          "destroyed": 0.0,
+          "recovered": 0.0
+        },
+        {
+          "offset": -0.12910970654541154,
+          "pvalue": 4.174501277933013e-11,
+          "accepted": true,
+          "log_evalue": 23.89944112615423,
+          "accuracy_surplus": 0.04791666666666668,
+          "destroyed": 0.0016666666666666668,
+          "recovered": 0.0
+        },
+        {
+          "offset": 0.2561867845924861,
+          "pvalue": 0.020264680432699515,
+          "accepted": false,
+          "log_evalue": 3.8988757884464103,
+          "accuracy_surplus": 0.02625000000000004,
+          "destroyed": 0.02333333333333333,
+          "recovered": 0.0
+        }
+      ],
+      "old": 0.9783611371446423,
+      "new": 0.607425502187407,
+      "overall": 0.839260274035679,
+      "harmonic": 0.7495100416548406,
+      "destroyed_test": 0.012103092783505154,
+      "recovered_test": 0.0,
+      "test_target_met": true,
+      "target_gap_pp": 3.7420118712902295
+    },
+    {
+      "encoder": "l14",
+      "dataset": "pets",
+      "part": 1,
+      "order": 1,
+      "session": 3,
+      "method": "logistic",
+      "policy": "matched_test",
+      "retention": 0.95,
+      "feasible": true,
+      "base": 0.9415392064979696,
+      "novel": 0.7502233216518932,
+      "overshoot": 0.0005981880662295769
+    },
+    {
+      "encoder": "l14",
+      "dataset": "pets",
+      "part": 1,
+      "order": 1,
+      "session": 3,
+      "method": "logistic",
+      "policy": "matched_test",
+      "retention": 0.99,
+      "feasible": true,
+      "base": 0.9810484223680102,
+      "novel": 0.5784122403170022,
+      "overshoot": 0.0004888347391441838
+    },
+    {
+      "encoder": "l14",
+      "dataset": "pets",
+      "part": 1,
+      "order": 1,
+      "session": 3,
+      "method": "mlp",
+      "policy": "fixed_gate",
+      "old": 0.9347694470477977,
+      "new": 0.8451503699122747,
+      "overall": 0.9011622931219766,
+      "harmonic": 0.8877037453343445
+    },
+    {
+      "encoder": "l14",
+      "dataset": "pets",
+      "part": 1,
+      "order": 1,
+      "session": 3,
+      "method": "mlp",
+      "policy": "protection",
+      "offset": 0.7435585070281279,
+      "certified_expansion": true,
+      "fallback": false,
+      "delta": 0.05,
+      "per_session_delta": 0.01,
+      "calibration_max_weight": 0.0016666666666666668,
+      "trace": [
+        {
+          "offset": -6.565035553735511,
+          "pvalue": 1.853867032129082e-13,
+          "loss": 0.00041666666666666707,
+          "accepted": true
+        },
+        {
+          "offset": -2.3907668602181853,
+          "pvalue": 1.7832492904885523e-09,
+          "loss": 0.005416666666666668,
+          "accepted": true
+        },
+        {
+          "offset": 0.7435585070281279,
+          "pvalue": 0.002099966629659959,
+          "loss": 0.022083333333333337,
+          "accepted": true
+        },
+        {
+          "offset": 2.698594738369293,
+          "pvalue": 1.0,
+          "loss": 0.052083333333333336,
+          "accepted": false
+        }
+      ],
+      "old": 0.9558531708840988,
+      "new": 0.7904814585766967,
+      "overall": 0.893838778768823,
+      "harmonic": 0.8653372566275225,
+      "destroyed_test": 0.034611059044048736,
+      "recovered_test": 0.0,
+      "test_target_met": true,
+      "target_gap_pp": 1.4912152452358773
+    },
+    {
+      "encoder": "l14",
+      "dataset": "pets",
+      "part": 1,
+      "order": 1,
+      "session": 3,
+      "method": "mlp",
+      "policy": "paired_accuracy",
+      "offset": 0.7435585070281279,
+      "fallback": false,
+      "certified_expansion": true,
+      "delta": 0.05,
+      "per_session_delta": 0.01,
+      "trace": [
+        {
+          "offset": -6.565035553735511,
+          "pvalue": 2.3779134071293653e-12,
+          "accepted": true,
+          "log_evalue": 26.764797732482194,
+          "accuracy_surplus": 0.04958333333333334,
+          "destroyed": 0.0,
+          "recovered": 0.0
+        },
+        {
+          "offset": -2.3907668602181853,
+          "pvalue": 8.535560668257121e-09,
+          "accepted": true,
+          "log_evalue": 18.579024792376323,
+          "accuracy_surplus": 0.04458333333333334,
+          "destroyed": 0.005,
+          "recovered": 0.0
+        },
+        {
+          "offset": 0.7435585070281279,
+          "pvalue": 0.009709964879510133,
+          "accepted": true,
+          "log_evalue": 4.634602613625699,
+          "accuracy_surplus": 0.027916666666666708,
+          "destroyed": 0.021666666666666667,
+          "recovered": 0.0
+        },
+        {
+          "offset": 2.698594738369293,
+          "pvalue": 1.0,
+          "accepted": false,
+          "log_evalue": -1.0576485442453514,
+          "accuracy_surplus": -0.002083333333333297,
+          "destroyed": 0.051666666666666666,
+          "recovered": 0.0
+        }
+      ],
+      "old": 0.9558531708840988,
+      "new": 0.7904814585766967,
+      "overall": 0.893838778768823,
+      "harmonic": 0.8653372566275225,
+      "destroyed_test": 0.034611059044048736,
+      "recovered_test": 0.0,
+      "test_target_met": true,
+      "target_gap_pp": 1.4912152452358773
+    },
+    {
+      "encoder": "l14",
+      "dataset": "pets",
+      "part": 1,
+      "order": 1,
+      "session": 3,
+      "method": "mlp",
+      "policy": "matched_test",
+      "retention": 0.95,
+      "feasible": true,
+      "base": 0.9414979693845675,
+      "novel": 0.8340055887674935,
+      "overshoot": 0.0005569509528274841
+    },
+    {
+      "encoder": "l14",
+      "dataset": "pets",
+      "part": 1,
+      "order": 1,
+      "session": 3,
+      "method": "mlp",
+      "policy": "matched_test",
+      "retention": 0.99,
+      "feasible": true,
+      "base": 0.9810690409247113,
+      "novel": 0.664340227673561,
+      "overshoot": 0.0005094532958452858
+    }
+  ],
+  "witness": {
+    "cal": 1.3113021850585938e-06,
+    "test": 0.0
+  }
+}

@@ -1,0 +1,584 @@
+{
+  "complete": true,
+  "source": "matched frozen-CLIP feature transfer, not published backbone reproduction",
+  "records": 704,
+  "independently_verified_calibration_tests": 3352,
+  "summary": [
+    {
+      "encoder": "b32",
+      "track": "standard",
+      "method": "BiMC_transfer",
+      "n_seeds": 1,
+      "aia_top1": 68.48278373524444,
+      "final_top1": 64.16983085950983,
+      "aia_macro": 68.47426697066979
+    },
+    {
+      "encoder": "b32",
+      "track": "standard",
+      "method": "HyCal_transfer",
+      "n_seeds": 1,
+      "aia_top1": 63.95425224949408,
+      "final_top1": 55.93717638936832,
+      "aia_macro": 64.15233963810837
+    },
+    {
+      "encoder": "b32",
+      "track": "standard",
+      "method": "RanPAC_frozen_transfer",
+      "n_seeds": 1,
+      "aia_top1": 61.526508272279536,
+      "final_top1": 50.06903693476009,
+      "aia_macro": 61.8761239965212
+    },
+    {
+      "encoder": "b32",
+      "track": "standard",
+      "method": "SimpleCIL_transfer",
+      "n_seeds": 1,
+      "aia_top1": 63.921648731634164,
+      "final_top1": 58.06006213324129,
+      "aia_macro": 63.95350837329033
+    },
+    {
+      "encoder": "b32",
+      "track": "standard",
+      "method": "dense",
+      "n_seeds": 1,
+      "aia_top1": 67.68127734468428,
+      "final_top1": 63.548498446668965,
+      "aia_macro": 67.59522158942585
+    },
+    {
+      "encoder": "b32",
+      "track": "standard",
+      "method": "fixed",
+      "n_seeds": 1,
+      "aia_top1": 67.3854055520342,
+      "final_top1": 62.21953745253711,
+      "aia_macro": 67.31110293088705
+    },
+    {
+      "encoder": "b32",
+      "track": "standard",
+      "method": "full",
+      "n_seeds": 1,
+      "aia_top1": 68.65902129379197,
+      "final_top1": 63.56575768035899,
+      "aia_macro": 68.65671766476223
+    },
+    {
+      "encoder": "b32",
+      "track": "standard",
+      "method": "none",
+      "n_seeds": 1,
+      "aia_top1": 65.91526362566592,
+      "final_top1": 59.423541594753196,
+      "aia_macro": 65.87130200039591
+    },
+    {
+      "encoder": "b32",
+      "track": "certified",
+      "method": "BiMC_transfer",
+      "n_seeds": 3,
+      "aia_top1": 67.04997046132114,
+      "final_top1": 63.15153607179841,
+      "aia_macro": 67.0766260805502,
+      "common": {
+        "novel": 0.0,
+        "base": 76.43237328499698,
+        "closed": 76.43237328499698,
+        "finite": 0,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 52.746549064970104
+      },
+      "self": {
+        "novel": 51.83111248501445,
+        "base": 72.87503604175276,
+        "closed": 74.53778928051791,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 55.65357901827955
+      }
+    },
+    {
+      "encoder": "b32",
+      "track": "certified",
+      "method": "HyCal_transfer",
+      "n_seeds": 3,
+      "aia_top1": 62.24080899754092,
+      "final_top1": 56.53549649062247,
+      "aia_macro": 62.41409406653779,
+      "common": {
+        "novel": 0.0,
+        "base": 76.43237328499698,
+        "closed": 76.43237328499698,
+        "finite": 0,
+        "met": 3,
+        "oracle_feasible": 0,
+        "oracle_novel": null
+      },
+      "self": {
+        "novel": 42.98733582408716,
+        "base": 70.82759881205666,
+        "closed": 72.06954514658163,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 46.844191047911536
+      }
+    },
+    {
+      "encoder": "b32",
+      "track": "certified",
+      "method": "RanPAC_frozen_transfer",
+      "n_seeds": 3,
+      "aia_top1": 62.51561894376687,
+      "final_top1": 54.42411690254286,
+      "aia_macro": 62.789158785128905,
+      "common": {
+        "novel": 0.0,
+        "base": 76.43237328499698,
+        "closed": 76.43237328499698,
+        "finite": 0,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 47.487076887621335
+      },
+      "self": {
+        "novel": 39.442876421823776,
+        "base": 74.62467138429164,
+        "closed": 75.75645825291004,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 48.212475153400725
+      }
+    },
+    {
+      "encoder": "b32",
+      "track": "certified",
+      "method": "SimpleCIL_transfer",
+      "n_seeds": 3,
+      "aia_top1": 61.99886840267851,
+      "final_top1": 56.70233574962605,
+      "aia_macro": 62.09259379088488,
+      "common": {
+        "novel": 0.0,
+        "base": 76.43237328499698,
+        "closed": 76.43237328499698,
+        "finite": 0,
+        "met": 3,
+        "oracle_feasible": 0,
+        "oracle_novel": null
+      },
+      "self": {
+        "novel": 39.60951128927534,
+        "base": 69.78576879189079,
+        "closed": 70.99475988039207,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 46.49917809554832
+      }
+    },
+    {
+      "encoder": "b32",
+      "track": "certified",
+      "method": "dense",
+      "n_seeds": 3,
+      "aia_top1": 66.14057057377225,
+      "final_top1": 62.31158669888389,
+      "aia_macro": 66.06605078778,
+      "common": {
+        "novel": 0.0,
+        "base": 76.43237328499698,
+        "closed": 76.43237328499698,
+        "finite": 0,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 50.924878952465136
+      },
+      "self": {
+        "novel": 50.28103869310764,
+        "base": 72.78600738573259,
+        "closed": 74.19932355019813,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 54.12763673108499
+      }
+    },
+    {
+      "encoder": "b32",
+      "track": "certified",
+      "method": "fixed",
+      "n_seeds": 3,
+      "aia_top1": 65.65112200898912,
+      "final_top1": 60.93084800368197,
+      "aia_macro": 65.60813588934144,
+      "common": {
+        "novel": 27.77828723001136,
+        "base": 75.53759783629857,
+        "closed": 76.43237328499698,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 49.80829649277923
+      },
+      "self": {
+        "novel": 43.75516820344405,
+        "base": 74.77612042482114,
+        "closed": 75.94372810449772,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 50.626834659593264
+      }
+    },
+    {
+      "encoder": "b32",
+      "track": "certified",
+      "method": "full",
+      "n_seeds": 3,
+      "aia_top1": 67.08790140970949,
+      "final_top1": 62.70854907375446,
+      "aia_macro": 67.06331183201755,
+      "common": {
+        "novel": 47.10782703886151,
+        "base": 75.09805326551961,
+        "closed": 76.43237328499698,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 53.05497452738831
+      },
+      "self": {
+        "novel": 47.10782703886151,
+        "base": 75.09805326551961,
+        "closed": 76.43237328499698,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 53.05497452738831
+      }
+    },
+    {
+      "encoder": "b32",
+      "track": "certified",
+      "method": "none",
+      "n_seeds": 3,
+      "aia_top1": 64.39983390570933,
+      "final_top1": 58.35922218386836,
+      "aia_macro": 64.39993246876156,
+      "common": {
+        "novel": 28.895551766241418,
+        "base": 75.54055005926578,
+        "closed": 76.43237328499698,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 44.62223064292028
+      },
+      "self": {
+        "novel": 38.86546671719084,
+        "base": 74.94040269704945,
+        "closed": 76.09283417361881,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 44.90553660898486
+      }
+    },
+    {
+      "encoder": "l14",
+      "track": "standard",
+      "method": "BiMC_transfer",
+      "n_seeds": 1,
+      "aia_top1": 82.11304595640851,
+      "final_top1": 80.39351052813255,
+      "aia_macro": 82.12983268246613
+    },
+    {
+      "encoder": "l14",
+      "track": "standard",
+      "method": "HyCal_transfer",
+      "n_seeds": 1,
+      "aia_top1": 79.39350807213518,
+      "final_top1": 75.76803589920608,
+      "aia_macro": 79.53865311375469
+    },
+    {
+      "encoder": "l14",
+      "track": "standard",
+      "method": "RanPAC_frozen_transfer",
+      "n_seeds": 1,
+      "aia_top1": 79.11482065709244,
+      "final_top1": 73.86952019330342,
+      "aia_macro": 79.2391393840574
+    },
+    {
+      "encoder": "l14",
+      "track": "standard",
+      "method": "SimpleCIL_transfer",
+      "n_seeds": 1,
+      "aia_top1": 80.16927854559431,
+      "final_top1": 77.40766309975837,
+      "aia_macro": 80.20965758200565
+    },
+    {
+      "encoder": "l14",
+      "track": "standard",
+      "method": "dense",
+      "n_seeds": 1,
+      "aia_top1": 81.01227887187079,
+      "final_top1": 79.06454953400069,
+      "aia_macro": 80.96784196994264
+    },
+    {
+      "encoder": "l14",
+      "track": "standard",
+      "method": "fixed",
+      "n_seeds": 1,
+      "aia_top1": 78.71130255650412,
+      "final_top1": 75.50914739385571,
+      "aia_macro": 78.56154108600421
+    },
+    {
+      "encoder": "l14",
+      "track": "standard",
+      "method": "full",
+      "n_seeds": 1,
+      "aia_top1": 80.44848581123662,
+      "final_top1": 77.32136693130826,
+      "aia_macro": 80.39612427651377
+    },
+    {
+      "encoder": "l14",
+      "track": "standard",
+      "method": "none",
+      "n_seeds": 1,
+      "aia_top1": 78.41837439471392,
+      "final_top1": 74.05937176389368,
+      "aia_macro": 78.44201587178958
+    },
+    {
+      "encoder": "l14",
+      "track": "certified",
+      "method": "BiMC_transfer",
+      "n_seeds": 3,
+      "aia_top1": 81.27381003137023,
+      "final_top1": 79.74916580370498,
+      "aia_macro": 81.26250000372325,
+      "common": {
+        "novel": 24.579238214900666,
+        "base": 85.6983033929811,
+        "closed": 85.71868259454467,
+        "finite": 1,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 77.02339336404678
+      },
+      "self": {
+        "novel": 76.16666821784796,
+        "base": 83.36049076416403,
+        "closed": 85.36413765866541,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 77.1029255277895
+      }
+    },
+    {
+      "encoder": "l14",
+      "track": "certified",
+      "method": "HyCal_transfer",
+      "n_seeds": 3,
+      "aia_top1": 78.77831092721466,
+      "final_top1": 76.15924519617995,
+      "aia_macro": 78.83418694053947,
+      "common": {
+        "novel": 0.0,
+        "base": 85.71868259454467,
+        "closed": 85.71868259454467,
+        "finite": 0,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 70.7946419984533
+      },
+      "self": {
+        "novel": 70.26936649758795,
+        "base": 82.00184095801298,
+        "closed": 84.59591699691651,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 71.74907771196342
+      }
+    },
+    {
+      "encoder": "l14",
+      "track": "certified",
+      "method": "RanPAC_frozen_transfer",
+      "n_seeds": 3,
+      "aia_top1": 80.12683065966215,
+      "final_top1": 77.12000920492463,
+      "aia_macro": 80.19997539764626,
+      "common": {
+        "novel": 73.69662884000459,
+        "base": 85.18487122480138,
+        "closed": 85.71868259454467,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 75.4416041208238
+      },
+      "self": {
+        "novel": 74.43849865601231,
+        "base": 84.94135679967775,
+        "closed": 86.83591012796411,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 75.26850470561911
+      }
+    },
+    {
+      "encoder": "l14",
+      "track": "certified",
+      "method": "SimpleCIL_transfer",
+      "n_seeds": 3,
+      "aia_top1": 78.78049007385175,
+      "final_top1": 76.43539293522035,
+      "aia_macro": 78.83012344313903,
+      "common": {
+        "novel": 0.0,
+        "base": 85.71868259454467,
+        "closed": 85.71868259454467,
+        "finite": 0,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 71.90892040002753
+      },
+      "self": {
+        "novel": 71.38489803199427,
+        "base": 81.78953387016867,
+        "closed": 83.75425535557972,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 72.49663969827313
+      }
+    },
+    {
+      "encoder": "l14",
+      "track": "certified",
+      "method": "dense",
+      "n_seeds": 3,
+      "aia_top1": 80.3742225557047,
+      "final_top1": 78.52376021171327,
+      "aia_macro": 80.32600564021747,
+      "common": {
+        "novel": 24.075648781547166,
+        "base": 85.55086822777982,
+        "closed": 85.71868259454467,
+        "finite": 1,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 74.77618626584149
+      },
+      "self": {
+        "novel": 73.18727178246239,
+        "base": 83.72989609923654,
+        "closed": 84.85497714845543,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 74.9732622892333
+      }
+    },
+    {
+      "encoder": "l14",
+      "track": "certified",
+      "method": "fixed",
+      "n_seeds": 3,
+      "aia_top1": 77.49005933976387,
+      "final_top1": 74.61166724197446,
+      "aia_macro": 77.3631091406835,
+      "common": {
+        "novel": 41.891055113468916,
+        "base": 84.69044799389636,
+        "closed": 85.71868259454467,
+        "finite": 2,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 67.90488189970952
+      },
+      "self": {
+        "novel": 62.79225927329377,
+        "base": 83.7426818087239,
+        "closed": 85.36528717270848,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 68.14201717822411
+      }
+    },
+    {
+      "encoder": "l14",
+      "track": "certified",
+      "method": "full",
+      "n_seeds": 3,
+      "aia_top1": 79.80624096454008,
+      "final_top1": 77.61477390403866,
+      "aia_macro": 79.87845107046468,
+      "common": {
+        "novel": 73.15409223766761,
+        "base": 83.54939288042748,
+        "closed": 85.71868259454467,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 74.47919810578618
+      },
+      "self": {
+        "novel": 73.15409223766761,
+        "base": 83.54939288042748,
+        "closed": 85.71868259454467,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 74.47919810578618
+      }
+    },
+    {
+      "encoder": "l14",
+      "track": "certified",
+      "method": "none",
+      "n_seeds": 3,
+      "aia_top1": 76.53878675567847,
+      "final_top1": 72.47727534230813,
+      "aia_macro": 76.52127714832172,
+      "common": {
+        "novel": 60.13823417961349,
+        "base": 84.08341394016068,
+        "closed": 85.71868259454467,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 65.24960433798911
+      },
+      "self": {
+        "novel": 59.413757315481455,
+        "base": 84.25237945740207,
+        "closed": 85.97362780758586,
+        "finite": 3,
+        "met": 3,
+        "oracle_feasible": 3,
+        "oracle_novel": 65.12699897400444
+      }
+    }
+  ]
+}

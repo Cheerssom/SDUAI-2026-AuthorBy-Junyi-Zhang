@@ -1,0 +1,1 @@
+Merged summary: standard-track accuracy from autodl_round4_20261109; certified results re-certified against the four-source AnchorCE closed head (autodl_round5_20261110, summary_ref4.json) wherever available; ablation variants keep the three-source core reference (field certified_reference).

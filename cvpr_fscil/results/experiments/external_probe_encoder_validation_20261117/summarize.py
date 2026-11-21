@@ -1,0 +1,44 @@
+from pathlib import Path
+import json
+import numpy as np
+
+folder = Path(__file__).resolve().parent
+summary = {}
+lines = [
+    "# External deployed-probe validation on additional encoders",
+    "",
+    "Standalone experiment. Three benchmarks (CIFAR-100, miniImageNet, CUB-200), seeds 0/1/2, five calibration images per base class, retention ratio 0.95, joint error budget 0.05. Existing table-S8 split, logistic-probe fitting, base-only tuning and paired betting certification are reused. Both variants retain the same external probe and use the same 3,636-setting base-only search. Novel support is five-shot. Final-session results only.",
+    "",
+    "Per-query alignment and fixed-moment alignment each select their coefficients independently using base-only tuning data. All base-calibration recovery rates are asserted to be zero. Failed certifications contribute zero novel accuracy.",
+    "",
+    "Confidence intervals use 20,000 paired bootstrap resamples of the nine dataset-seed differences, with RNG seed 2026, matching the existing experiment. These intervals describe these nine paired units, with only three datasets and shared frozen features.",
+    "",
+    "| Encoder | Method | Admitted | Certified novel (%) | Conditional novel (%) | Paired improvement [95% CI] (pp) | Wins |",
+    "|---|---|---|---|---|---|---|",
+]
+for enc in ["b32", "l14"]:
+    payload = json.loads((folder / f"{enc}_records.json").read_text())
+    records = payload["records"]["5"]
+    ours = records["AnchorCE_full"]
+    control = records["Wrap_fixed_mom"]
+    keys = [(r["ds"], r["seed"]) for r in ours]
+    assert len(keys) == 9 and len(set(keys)) == 9
+    assert keys == [(r["ds"], r["seed"]) for r in control]
+    differences = np.array([a["novel"] - b["novel"] for a, b in zip(ours, control)])
+    rng = np.random.default_rng(2026)
+    boot = differences[rng.integers(0, 9, size=(20000, 9))].mean(axis=1)
+    low, high = np.percentile(boot, [2.5, 97.5])
+    results = dict(improvement_pp=float(differences.mean()), ci95=[float(low), float(high)], wins=int((differences > 0).sum()), methods={})
+    for name, data in records.items():
+        admitted = [r["novel"] for r in data if r["admitted"]]
+        result = dict(admitted=len(admitted), total=9, certified_novel=float(np.mean([r["novel"] for r in data])), conditional_novel=float(np.mean(admitted)) if admitted else None,
+                      per_dataset={ds: float(np.mean([r["novel"] for r in data if r["ds"] == ds])) for ds in ["cifar100", "mini", "cub200"]})
+        results["methods"][name] = result
+        contrast = f'{differences.mean():.2f} [{low:.2f}, {high:.2f}]' if name == "AnchorCE_full" else "Reference"
+        wins = str(results["wins"]) + "/9" if name == "AnchorCE_full" else ""
+        lines.append(f'| {enc} | {name} | {len(admitted)}/9 | {result["certified_novel"]:.2f} | {result["conditional_novel"]:.2f} | {contrast} | {wins} |')
+    summary[enc] = results
+lines.extend(["", "The experiment tests the external-probe wrapper with four available sources. It does not independently isolate the necessity of each source. Generalization to other deployed-head families remains an empirical question.", "", "Run commands", "", "```powershell", "python run_encoder_validation.py --encoder b32", "python run_encoder_validation.py --encoder l14", "python summarize.py", "```"])
+(folder / "summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+(folder / "report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+print("\n".join(lines[8:]))

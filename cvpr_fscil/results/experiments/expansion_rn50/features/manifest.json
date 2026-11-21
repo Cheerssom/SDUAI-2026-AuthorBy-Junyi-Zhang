@@ -1,0 +1,23 @@
+{
+  "model_manifest_sha256": "ea7d8e930f69dae6e32b753ca1c5895b831ba185971b78e3a99f1a2a0323755d",
+  "data_manifest_sha256": "4a0e8b743f28fe5901840f507689a276f2726059a6ad9a44da731a05dcabc060",
+  "calibration_pool_sha256": "c6ce3b04abd372754f290e6d57645b1a843b89307594b3b3023071e95b71c768",
+  "source_sha256": "2cb37124dabed4faa79717b157e06f4a314b7d5cb0caeb07e2a7666576c2c152",
+  "protocol_sha256": "298b5863fbe6c776e7f4c9c90e2df8da15fd92e1b7eec2e10926a1e24e371dc2",
+  "clip_source_sha256": {
+    "clip.py": "9964be5024a30b0268285855e83f2aa14b362488d9797a7ce2aaa09e8f72b966",
+    "model.py": "d4225196bddfa2950ce0d926b7e3b1d80a37c258b49a7452fe1f5499b974cf67",
+    "simple_tokenizer.py": "3574a1509978385ee93db78d6bae1d6e91bf9b244eed7ea7ba49d9fe113a55a3"
+  },
+  "templates": [
+    "a photo of a {}.",
+    "a bad photo of a {}.",
+    "a cropped photo of a {}.",
+    "a close-up photo of a {}.",
+    "a bright photo of a {}.",
+    "a good photo of a {}.",
+    "a photo of the {}.",
+    "a photo of a {}."
+  ],
+  "preprocessing": "native CLIP Resize224 BICUBIC/CenterCrop224/RGB/ToTensor/CLIP mean/std; native context77 tokenizer"
+}

@@ -1,0 +1,67 @@
+{
+  "encoder": "l14",
+  "dataset": "sun",
+  "partition": 0,
+  "device": "CPU",
+  "torch_threads": 2,
+  "batch": 512,
+  "excludes_image_encoder": true,
+  "full": {
+    "median_ms": 35.728050001125666,
+    "p10_ms": 31.15539999853354,
+    "p90_ms": 40.76595000260568,
+    "repetitions": 30
+  },
+  "rows": [
+    {
+      "kind": "logistic",
+      "trainable_router_parameters": 13,
+      "standardization_constants": 24,
+      "complete_readout": {
+        "median_ms": 40.298850000908715,
+        "p10_ms": 37.72048999708204,
+        "p90_ms": 44.397540002682945,
+        "repetitions": 30
+      },
+      "gate_forward": {
+        "median_ms": 0.07680000089749228,
+        "p10_ms": 0.07597000039822888,
+        "p90_ms": 0.08302999995066787,
+        "repetitions": 30
+      },
+      "selected_setting_fit_seconds": [
+        0.17141160000028322,
+        0.03203479999865522,
+        0.03418650000094203
+      ],
+      "full_selection_seconds": 0.7733759000002465
+    },
+    {
+      "kind": "mlp",
+      "trainable_router_parameters": 225,
+      "standardization_constants": 24,
+      "complete_readout": {
+        "median_ms": 39.37699999914912,
+        "p10_ms": 37.558280000666855,
+        "p90_ms": 46.88504000187095,
+        "repetitions": 30
+      },
+      "gate_forward": {
+        "median_ms": 0.7059499985189177,
+        "p10_ms": 0.6163099995319499,
+        "p90_ms": 0.9218300008797087,
+        "repetitions": 30
+      },
+      "selected_setting_fit_seconds": [
+        0.7105043000010483,
+        0.6038498000016261,
+        0.6384139999972831
+      ],
+      "full_selection_seconds": 22.55495769999834
+    }
+  ],
+  "inputs": {
+    "experiments\\expansion_prospective_validation\\external\\l14\\sun\\catalog\\p0\\selection.json": "ced4bd94de3b1973d2f931720ba18a7e7dce67bfd3b7084c337f42d65292f65d"
+  },
+  "script_sha256": "a843e50447a2cb693aef10cb6e13a2c936e95af229c801f77bc88f936d8ad01d"
+}

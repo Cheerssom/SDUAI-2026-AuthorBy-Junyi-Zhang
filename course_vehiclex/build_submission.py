@@ -11,6 +11,7 @@ and cluster-orchestration scripts (SSH/remote control), which are not experiment
 """
 import os
 import re
+import shutil
 import sys
 import zipfile
 from pathlib import Path
@@ -20,7 +21,9 @@ COURSE = ROOT / "vehiclex_course"
 JLT = ROOT / "JLT-Head"
 MINI = "--mini" in sys.argv          # course limit for supplementary material: 20 MB
 LITE = "--lite" in sys.argv or MINI  # OpenReview single-file limit: 100 MB
-OUT = COURSE / "submission" / ("AnchorCE_supplementary.zip" if LITE else "AnchorCE_code.zip")
+REPO = "--repo" in sys.argv          # plain directory for a git repository instead of a zip
+OUT = (ROOT / "vehiclex-fscil-course") if REPO else COURSE / "submission" / (
+    "AnchorCE_supplementary.zip" if LITE else "AnchorCE_code.zip")
 # In the lite package, per-run outputs are replaced by the summary-level files of each study.
 HEAVY = {"expansion_prospective_validation", "kbs_reviewer_revision", "kbs_full_fusion_retuning",
          "expansion_constant_sensitivity_remote", "expansion_shrinkage"}   # summary-only in the lite package
@@ -80,6 +83,24 @@ def add(zf, src, arc):
     return src.stat().st_size
 
 
+class DirWriter:
+    """Same interface as ZipFile.write, copying into a directory tree."""
+
+    def __init__(self, root):
+        self.root = Path(root)
+
+    def write(self, src, arc):
+        dst = self.root / arc
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(src, dst)
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        return False
+
+
 def walk(base, exts, npz=False):
     for dirpath, dirnames, filenames in os.walk(base):
         dirnames[:] = [d for d in dirnames if d not in SKIP_PARTS]
@@ -93,10 +114,13 @@ def walk(base, exts, npz=False):
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     total = 0
-    with zipfile.ZipFile(OUT, "w", zipfile.ZIP_DEFLATED, compresslevel=6) as zf:
-        zf.write(COURSE / "submission" / "README_PACKAGE.md", "README.md")
-        if LITE:
-            zf.write(COURSE / "paper_cvpr" / "supplementary.pdf", "supplementary.pdf")
+    writer = DirWriter(OUT) if REPO else zipfile.ZipFile(OUT, "w", zipfile.ZIP_DEFLATED, compresslevel=6)
+    with writer as zf:
+        zf.write(COURSE / "submission" / ("README_REPO.md" if REPO else "README_PACKAGE.md"), "README.md")
+        if LITE or REPO:
+            zf.write(COURSE / "paper_cvpr" / "supplementary.pdf", "paper/supplementary.pdf" if REPO else "supplementary.pdf")
+        if REPO:
+            zf.write(COURSE / "paper_cvpr" / "main.pdf", "paper/main.pdf")
         for rel in COURSE_FILES:
             total += add(zf, COURSE / rel, f"course_vehiclex/{rel}")
         for src, arc in ((JLT / "autodl_fscil", "cvpr_fscil/code/autodl_fscil"),
@@ -111,7 +135,7 @@ def main():
                     total += add(zf, p, f"{arc}/{p.relative_to(src).as_posix()}")
         top = JLT / "experiments"
         for p in sorted(top.iterdir()):           # protocols and top-level summaries of every study
-            if p.is_file() and p.suffix in {".md", ".json"} and p.stat().st_size < 20e6:
+            if p.is_file() and p.suffix == ".md":
                 total += add(zf, p, f"cvpr_fscil/results/experiments/{p.name}")
         for d in RESULT_DIRS:
             base = JLT / "experiments" / d
@@ -123,7 +147,8 @@ def main():
                     continue
                 total += add(zf, p, f"cvpr_fscil/results/experiments/{p.relative_to(base.parent).as_posix()}")
     (COURSE / "submission" / "excluded_sensitive.txt").write_text("\n".join(excluded_sensitive), encoding="utf-8")
-    print(f"raw {total / 1e6:.1f} MB -> zip {OUT.stat().st_size / 1e6:.1f} MB; "
+    size = OUT.stat().st_size if not REPO else total
+    print(f"raw {total / 1e6:.1f} MB -> {'repo' if REPO else 'zip'} {size / 1e6:.1f} MB; "
           f"{len(excluded_sensitive)} files excluded for containing remote-access details")
 
 

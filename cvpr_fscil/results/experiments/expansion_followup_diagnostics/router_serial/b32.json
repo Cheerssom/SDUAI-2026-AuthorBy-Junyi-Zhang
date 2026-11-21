@@ -1,0 +1,67 @@
+{
+  "encoder": "b32",
+  "dataset": "sun",
+  "partition": 0,
+  "device": "CPU",
+  "torch_threads": 2,
+  "batch": 512,
+  "excludes_image_encoder": true,
+  "full": {
+    "median_ms": 26.91419999973732,
+    "p10_ms": 26.170309998633456,
+    "p90_ms": 28.007560001060483,
+    "repetitions": 30
+  },
+  "rows": [
+    {
+      "kind": "logistic",
+      "trainable_router_parameters": 13,
+      "standardization_constants": 24,
+      "complete_readout": {
+        "median_ms": 30.599700001403107,
+        "p10_ms": 29.406409997682204,
+        "p90_ms": 33.06813999952283,
+        "repetitions": 30
+      },
+      "gate_forward": {
+        "median_ms": 0.0774000000092201,
+        "p10_ms": 0.07699000052525662,
+        "p90_ms": 0.1418599993485259,
+        "repetitions": 30
+      },
+      "selected_setting_fit_seconds": [
+        0.010632999998051673,
+        0.010127100002137013,
+        0.010246299996651942
+      ],
+      "full_selection_seconds": 0.5704972999992606
+    },
+    {
+      "kind": "mlp",
+      "trainable_router_parameters": 225,
+      "standardization_constants": 24,
+      "complete_readout": {
+        "median_ms": 32.77720000005502,
+        "p10_ms": 30.37893999935477,
+        "p90_ms": 34.82020999872475,
+        "repetitions": 30
+      },
+      "gate_forward": {
+        "median_ms": 0.6058500002836809,
+        "p10_ms": 0.5938599999353755,
+        "p90_ms": 0.6338000031973934,
+        "repetitions": 30
+      },
+      "selected_setting_fit_seconds": [
+        0.5863487999995414,
+        0.5859853000001749,
+        0.5921350000025996
+      ],
+      "full_selection_seconds": 19.913208400001167
+    }
+  ],
+  "inputs": {
+    "experiments\\expansion_prospective_validation\\external\\b32\\sun\\catalog\\p0\\selection.json": "a4ed4b227d2ef5cb756f9fc622ae4ce589978776c8d1d50d6cecb2f6883265d6"
+  },
+  "script_sha256": "a843e50447a2cb693aef10cb6e13a2c936e95af229c801f77bc88f936d8ad01d"
+}

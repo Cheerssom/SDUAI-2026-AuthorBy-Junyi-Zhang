@@ -1,12 +1,11 @@
 # AnchorCE：代码与实验结果
 
-本压缩包对应论文《AnchorCE: Base-Anchored Evidence Alignment for Retention-Certified Few-Shot Class-Incremental Learning》（作者 Junyi Zhang）的正文与补充材料，包含全部实验代码、逐次运行结果和汇总结果。
-
-本包根目录的 `supplementary.pdf` 为论文补充材料。受课程补充材料 20 MB 限制，`cvpr_fscil/results/` 中每项实验保留协议文档与汇总结果（summary、verification、report 等）；VehicleX 实验（`course_vehiclex/`）保留全部逐种子结果，可直接由 `paper/make_tables_figures.py` 重新生成正文表 6 与补充 G 节的全部表格和图。各项实验的逐次运行明细（约 580 MB）可由本包代码重新生成。
+本仓库对应论文《AnchorCE: Base-Anchored Evidence Alignment for Retention-Certified Few-Shot Class-Incremental Learning》（作者 Junyi Zhang）的正文与补充材料，包含全部实验代码、逐次运行结果和汇总结果（论文正文不在本仓库中）。补充材料 PDF 位于根目录 `supplementary.pdf`。
 
 ## 目录结构
 
 ```
+supplementary.pdf           论文补充材料
 course_vehiclex/            VehicleX 车型增量实验（正文表 6、补充材料 G 节）
   README.md                 环境、数据准备与运行命令
   run.py                    VehicleX 数据检查与 CLIP ViT-B/16 特征提取
@@ -74,4 +73,4 @@ VehicleX：样本抽取种子 2026，实验种子 42–47。CEC 基准：官方�
 
 ## 未包含的内容
 
-CLIP 特征缓存（`*.pt`，约 21 GB）、数据集与模型压缩包（约 6 GB）以及表格脚本不读取的中间分数缓存（`*.npz`）未放入本包；它们可由上述代码与公开数据重新生成。用于远程集群调度的脚本（SSH 连接、文件同步）不属于实验代码，也未放入。
+CLIP 特征缓存（`*.pt`，约 21 GB）、数据集与模型压缩包（约 6 GB）以及表格脚本不读取的中间分数缓存（`*.npz`）未放入本仓库；它们可由上述代码与公开数据重新生成。用于远程集群调度的脚本（SSH 连接、文件同步）不属于实验代码，也未放入。
